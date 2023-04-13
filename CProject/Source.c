@@ -1,107 +1,69 @@
 #include <stdio.h> // 기본 입출력 헤더파일
 
-void main() // <- void main 하나만 존재해야 합니다. (프로그램의 진입점) 
+void main()
 {
-#pragma region 변수
-	// 데이터를 저장할 수 있모리 공간을 생성하는
-	// 것 입니다.
-
-	// 자료형이란?
-	// 데이터를 저장하기 위한 데이터의 형태를
-	// 정해주는 것입니다.
-
-	// 자료형 변수의 이름
-	// ;(세미콜론) : 한 문장의 끝을 알려주는 기호입니다.
-
-	// char 1 byte 한문자 저장 자료형
-	// short 2 byte 정수 저장 자료형
-	// int, long 4 byte 정수 저장 자료형
-	// float 4 byte 실수 저장 자료형
-	// double 8 byte
-	// long double 8 ~ 16 byte
-
-	char alphabet = 'A'; // <- 디버깅 화살표가 여기 있다면 (디버깅 실행 대기)
-	int data = 100;
-	float pi = 3.14;
-
-#pragma endregion
-
-	// 변수의 이름 규칙
+#pragma region 서식 지정자
 	/*
-	// 1. 예약어를 사용할 수 없습니다.
-	// ex) int int = 100;
+	char character = 'B';
+	int data = 100;
+	float decimal = 9.9542313f;
 
-	// 2.숫자를 변수이름으로 사용할 수 있으나
-	//	 첫번째 단어로 사용할 수 없습니다.
-	// ex) int hp1 = 300; (O)
-	// ex) int 1hp = 200; (X)
+	// 출력하기 위한 자료형의 정보를 명시적으로
+	// 지정해주는 것입니다.
 
-	// 3.변수의 이름은 대소문자를 구분합니다.
-	// ex) int attack = 26;
-	// ex) int ATTACK = 16;
+	// "%c" 문자 (서식 지정자)
+	// "%d" 정수 (서식 지정자)
+	// "%f" 실수 (서식 지정자 float)
 
-	// 4.변수의 이름에 공백이 포함될 수 없습니다.
-	// ex) int count Down = 3;
+	// 서식과 변수의 형태가 일치하지 않으면
+	// 원하는 값이 출력되지 않습니다.
+	// printf("character의 값 : %f\n", character); (X)
+	printf("data의 값 : %d\n", data);
 
-	// 5.벼이름으로 특수 기호는 "$", "_"만 가능합니다.
-	// ex) int count_Down = 5;
-	// ex) int mo$ney = 999;
+	// float 4 byte 크기의 실수형 자료형은 소수점 이하
+	// 6자리까지만 표기합니다.
+	printf("decimal의 값 : %f\n", decimal);
+
+	// 서식 지정자의 순서는 왼쪽에서부터 시작합니다.
+	printf("data : %d, decimal : %f\n", data, decimal);
+
+	// printf(data); (X)
 	*/
-
-#pragma region 변수의 초기화
-	// 최초로 변수에 값을 저장해주는 과정입니다.
-	int exp = 100; // 변수의 선언
-	exp = 999;
 #pragma endregion
 
-#pragma region 상수
-	// 프로그램이 실행되는 동안 더 이상 값을 변경할 수 없는 메모리 공간입니다.
-	// 리터럴 값
-	// const float pi = 3.141592;
-	// L-value와 R-value
+#pragma region 비트(bit)
+	// 데이터를 나타내는 최소의 단위이며, 0 또는 1의
+	// 조합으로 논리 계산을 수행하는 단위입니다.
 
-	// pi = 6.4571; 상수로 선언되었기 떄문에 값을 변경할 수 없습니다.
+	// 비트 연산자
+	// 비트 단위로 논리 연산을 수행하기 위해 사용하는
+	// 연산자입니다.
 
-	// 심볼릭 상수 : 메모리 공간을 가지고 있는 상수
-	// 리터럴 상수 : 메모리 공간을 가지고 있지 않은 상수
-#pragma endregion
+	// AND
+	// 두 개의 피연산자 모두 1이면 1을 반환하는 연산자입니다.
+	char num1 = 10;
+	char num2 = 15;
+	char num3 = 129;
 
-#pragma region 산술 연산자
-	int result = 10 + 25;
+	printf("num1과 num2를 AND 연산한 결과 : %d\n", num1 & num2);
 
-	// 1. num1 변수 = B 변수 + C 변수
-	// 2. num2 변수 = E 변수 - F (심볼릭)상수
-	// 3. num3 변수 = 리터럴 상수 * B 상수
-	// 4. num4 변수 = 리터럴 상수 / (심볼릭)상수
-	// 5. num5 변수 = 리터럴 상수 + 리터럴 상수
+	// OR
+	// 두 개의 피연산자 중에 하나라도 1이 있다면 1을 반환하는
+	// 연산자입니다.
+	printf("num1과 num2를 OR 연산한 결과 : %d\n", num1 | num2);
 
-	int num1;
-	int num2;
-	int num3;
-	int num4;
-	int num5;
+	// XOR
+	// 두 개의 피연산자가 서로 같으면 0을 반환하고, 서로 다르면 1을 
+	// 반환하는 연산자입니다.
+	printf("num1과 num2를 XOR 연산한 결과 : %d\n", num1 ^ num2);
 
-	int b = 5;
-	int c = 6;
-	num1 = b + c;
-	printf("값 : %d\n", num1);
+	// NOT
+	// 비트를 반전시키는 연산자입니다.
+	printf("num1을 NOT 연산한 결과 : %d", ~num1);
 
-	int e = 7;
-	const int f = 2;
-	num2 = e - f;
-	printf("값 : %d\n", num2);
-
-
-	const int B = 5;
-	printf("값 : %d\n", num3);
-
-
-
-	printf("값 : %d\n", num3);
-
-
-
-	printf("값 : %d\n", num3);
+	// 첫 번째 비트는 부호를 나타내며, 첫 번째 비트에
+	// 1이 있다면 값은 음수가 됩니다.
+	printf("num3의 값 : %d", num3);
 
 
 #pragma endregion

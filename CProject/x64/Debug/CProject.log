@@ -1,5 +1,2 @@
 ﻿  Source.c
-C:\Users\Administrator\Desktop\CProject\CProject\Source.c(25,1): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Administrator\Desktop\CProject\CProject\Source.c(82,6): warning C4101: 'num5': unreferenced local variable
-C:\Users\Administrator\Desktop\CProject\CProject\Source.c(81,6): warning C4101: 'num4': unreferenced local variable
   CProject.vcxproj -> C:\Users\Administrator\Desktop\CProject\CProject\x64\Debug\CProject.exe
