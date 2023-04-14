@@ -2,71 +2,152 @@
 
 void main()
 {
-#pragma region 서식 지정자
-	/*
-	char character = 'B';
-	int data = 100;
-	float decimal = 9.9542313f;
+#pragma region 오버플로우
+	// 특정한 자료형이 표현할 수 있는 최댓값의 범위
+	// 넘어서 연산을 수행하는 과정입니다.
 
-	// 출력하기 위한 자료형의 정보를 명시적으로
-	// 지정해주는 것입니다.
-
-	// "%c" 문자 (서식 지정자)
-	// "%d" 정수 (서식 지정자)
-	// "%f" 실수 (서식 지정자 float)
-
-	// 서식과 변수의 형태가 일치하지 않으면
-	// 원하는 값이 출력되지 않습니다.
-	// printf("character의 값 : %f\n", character); (X)
-	printf("data의 값 : %d\n", data);
-
-	// float 4 byte 크기의 실수형 자료형은 소수점 이하
-	// 6자리까지만 표기합니다.
-	printf("decimal의 값 : %f\n", decimal);
-
-	// 서식 지정자의 순서는 왼쪽에서부터 시작합니다.
-	printf("data : %d, decimal : %f\n", data, decimal);
-
-	// printf(data); (X)
-	*/
+	// char 1 Byte (-128 ~ +127)
+	// char data = 128;
+	// printf("data의 값 : %d", data);
 #pragma endregion
 
-#pragma region 비트(bit)
-	// 데이터를 나타내는 최소의 단위이며, 0 또는 1의
-	// 조합으로 논리 계산을 수행하는 단위입니다.
+#pragma region 언더플로우
+	// 특정한 자료형이 표현할 수 있는 최솟값의
+	// 범위를 넘어서 연산을 수행하는 과정입니다.
+	 
+	// char value = -129; // -128 ~ +127
+	// printf("value의 값 : %d", value);
+#pragma endregion
 
-	// 비트 연산자
-	// 비트 단위로 논리 연산을 수행하기 위해 사용하는
-	// 연산자입니다.
+#pragma region 관계연산자
+	// 두 개의 피연산자의 값을 비교하여
+	// 그 결과를 0 또는 1이라는 값으로 나타내는 연산자입니다.
+	
+	//int A = 5;
+	//int B = 10;
+	// 
+	// A "<" B : B가 A보다 클 때
+	//printf("A < B : %d\n", A < B);
+	// A ">" B : B가 A보다 작을 때
+	//printf("A > B : %d\n", A > B);
+	// A "<=" B : B가 A보다 크거나 같을 때
+	//printf("A <= B : %d\n", A <= B);
+	// A ">=" B : B가 A보다 작거나 같을 때
+	//printf("A >= B : %d\n", A >= B);
+	// A "==" B : A와 B가 같을 때
+	//printf("A == B : %d\n", A = B);
+	// A "!=" B : A와 B가 같지 않을때
+	//printf("A != B : %d\n", A != B);
+#pragma endregion
 
-	// AND
-	// 두 개의 피연산자 모두 1이면 1을 반환하는 연산자입니다.
-	char num1 = 10;
-	char num2 = 15;
-	char num3 = 129;
+#pragma region 조건문(if ~ else if ~ else)
+// if 문 : 어떤 특정한 조건을 비교하여 조건이
+// 맞다면 실행되는 명령문입니다.
 
-	printf("num1과 num2를 AND 연산한 결과 : %d\n", num1 & num2);
+	// 만약에~ (조건)
+	//if (15 == 15)
+	//{
+	//	// 조건이 "참" 이라면 { } 내부에 있는 내용을 실행합니다.
+	//	printf("15는 15와 같다.\n");
+	//}
 
-	// OR
-	// 두 개의 피연산자 중에 하나라도 1이 있다면 1을 반환하는
-	// 연산자입니다.
-	printf("num1과 num2를 OR 연산한 결과 : %d\n", num1 | num2);
+	// else if 문 : if문의 조건이 틀릴 떄 else if문의 조건이
+	// 맞다면 실행되는 명령문입니다.
 
-	// XOR
-	// 두 개의 피연산자가 서로 같으면 0을 반환하고, 서로 다르면 1을 
-	// 반환하는 연산자입니다.
-	printf("num1과 num2를 XOR 연산한 결과 : %d\n", num1 ^ num2);
+	//if (5 < 1)
+	//{
+	//	printf("if의 조건");
+	//}
+	//else if (5 == 5)
+	//{
+	//	printf("else if의 조건");
+	//}
+	//else if (10 == 10)
+	//{
+	//	// else if( ) 여러 개 선언할 수 있습니다.
+	//	printf("else if의 조건");
+	//}
 
-	// NOT
-	// 비트를 반전시키는 연산자입니다.
-	printf("num1을 NOT 연산한 결과 : %d", ~num1);
+	// else 문 : if문과 else if문의 조건이 다 틀리면 실행되는 명령문입니다.
 
-	// 첫 번째 비트는 부호를 나타내며, 첫 번째 비트에
-	// 1이 있다면 값은 음수가 됩니다.
-	printf("num3의 값 : %d", num3);
+	//if ('A' == 'B')
+	//{
+	//	printf("if 문");
+	//}
+	//else if ('C' == 'D')
+	//{
+	//	printf("else if 문");
+	//}
+	//else
+	//{
+	//	printf("else 문");
+	//}
+
+#pragma endregion
+
+#pragma region 논리 연산자
+	// && (AND)
+	//if ('A' == 'A' && 'A' != 'A')
+	//{
+	//	printf("AND의 조건이 성립합니다.");
+	//}
+	//
+	// || (OR)
+	//if ('A' == 'A' || 'A' == 'B')
+	//{
+	//	printf("OR의 조건이 성립합니다.");
+	//}
+	// 
+	// ! (NOT)
+	//if (!'A')
+	//{
+	//	printf("NOT의 조건이 성립합니다.");
+	//}
 
 
 #pragma endregion
+
+
+#pragma region 사분면
+
+	int x = -5;
+	int y = 0;
+
+	printf("x 위치 : %d, y 위치 : %d\n", x, y);
+
+	if (x > 0 && y > 0)
+	{
+		printf("제 1분면");
+	}
+	else if (x < 0 && y > 0)
+	{
+		printf("제 2분면");
+	}
+	else if (x < 0 && y < 0)
+	{
+		printf("제 3분면");
+	}
+	else if (x > 0 && y < 0)
+	{
+		printf("제 4분면");
+	}
+	else if (x == 0 && y != 0)
+	{
+		printf("y 절편");
+	}
+	else if (x != 0 && y == 0)
+	{
+		printf("x 절편");
+	}
+	else if (x == 0 && y == 0)
+	{
+		printf("원점");
+	}
+	
+
+
+#pragma endregion
+
 
 
 }
