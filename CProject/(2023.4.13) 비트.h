@@ -46,25 +46,25 @@ void main()
 	char num2 = 15;
 	char num3 = 129;
 
-	printf("num1과 num2를 AND 연산한 결과 : %d\n", num1 & num2);
+	// printf("num1과 num2를 AND 연산한 결과 : %d\n", num1 & num2);
 
 	// OR
 	// 두 개의 피연산자 중에 하나라도 1이 있다면 1을 반환하는
 	// 연산자입니다.
-	printf("num1과 num2를 OR 연산한 결과 : %d\n", num1 | num2);
+	// printf("num1과 num2를 OR 연산한 결과 : %d\n", num1 | num2);
 
 	// XOR
 	// 두 개의 피연산자가 서로 같으면 0을 반환하고, 서로 다르면 1을 
 	// 반환하는 연산자입니다.
-	printf("num1과 num2를 XOR 연산한 결과 : %d\n", num1 ^ num2);
+	// printf("num1과 num2를 XOR 연산한 결과 : %d\n", num1 ^ num2);
 
 	// NOT
 	// 비트를 반전시키는 연산자입니다.
-	printf("num1을 NOT 연산한 결과 : %d", ~num1);
+	// printf("num1을 NOT 연산한 결과 : %d", ~num1);
 
 	// 첫 번째 비트는 부호를 나타내며, 첫 번째 비트에
 	// 1이 있다면 값은 음수가 됩니다.
-	printf("num3의 값 : %d", num3);
+	// printf("num3의 값 : %d", num3);
 
 
 #pragma endregion

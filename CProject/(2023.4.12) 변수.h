@@ -21,9 +21,9 @@ void main() // <- void main 하나만 존재해야 합니다. (프로그램의 진입점)
 	// double 8 byte
 	// long double 8 ~ 16 byte
 
-	char alphabet = 'A'; // <- 디버깅 화살표가 여기 있다면 (디버깅 실행 대기)
-	int data = 100;
-	float pi = 3.14;
+	// char alphabet = 'A'; // <- 디버깅 화살표가 여기 있다면 (디버깅 실행 대기)
+	// int data = 100;
+	// float pi = 3.14;
 
 #pragma endregion
 
@@ -76,31 +76,31 @@ void main() // <- void main 하나만 존재해야 합니다. (프로그램의 진입점)
 	// 4. num4 변수 = 리터럴 상수 / (심볼릭)상수
 	// 5. num5 변수 = 리터럴 상수 + 리터럴 상수
 
-	int num1;
-	int num2;
-	int num3;
-	int num4;
-	int num5;
+	//int num1;
+	//int num2;
+	//int num3;
+	//int num4;
+	//int num5;
 
-	int B = 5;
-	int C = 6;
-	int E = 7;
-	const int F = 2;
+	//int B = 5;
+	//int C = 6;
+	//int E = 7;
+	//const int F = 2;
 
-	num1 = B + C;
-	printf("값 : %d\n", num1);
+	//num1 = B + C;
+	//printf("값 : %d\n", num1);
 
-	num2 = E - F;
-	printf("값 : %d\n", num2);
+	//num2 = E - F;
+	//printf("값 : %d\n", num2);
 
-	num3 = 5 * B;
-	printf("값 : %d\n", num3);
+	//num3 = 5 * B;
+	//printf("값 : %d\n", num3);
 
-	num4 = 30 / F;
-	printf("값 : %d\n", num4);
+	//num4 = 30 / F;
+	//printf("값 : %d\n", num4);
 
-	num5 = 5 + 5;
-	printf("값 : %d", num5);
+	//num5 = 5 + 5;
+	//printf("값 : %d", num5);
 
 #pragma endregion
 }
