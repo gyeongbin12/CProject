@@ -2,128 +2,117 @@
 
 void main()
 {
-#pragma region 반복문 (while)
-	// 특정 조건을 만족할 떄까지 계속해서
-	// 주어진 명령문을 실행하는 반복문입니다.
+#pragma region 상수화
+	// 포인터 변수를 상수로 선언하여, 포인터 변수가 가리키고 있는 주소에
+	// 존재하는 값을 변경할 수
+	// 없도록 설정하는 상수화입니다.
 
-	//int count = 5;
+	//int data = 100;
+	//int data1 = 20;
 
-	//while (count) // <- 조건
-	//{
-	//	printf("게임 실행...\n");
-	//	count--;
-	//}
+	//const int * ptr = &data;
+
+	//printf("ptr 변수의 값 : %p\n", ptr);
+	// *ptr = 300; 
+	//(포인터 변수 역참조는 상수화가 되었기 떄문에 에러를 발생시킵니다.)
+
+	//ptr = &data1;
+
+	//printf("ptr 변수의 값 : %p\n", ptr);
+
 #pragma endregion
 
-#pragma region continue 문
-	// 해당 조건문만 실행하지 않고, 반복문은
-	// 이어서 실행하는 제어문입니다.
+#pragma region 포인터 상수
+	// 상수로 선언한 포인터이므로, 해당 변수의 값을 변경할 수 없지만,
+	// 다른 변수의 주소 값을 가리킬 수 있습니다.
 
-	//for (int i = 1; i <= 5; i++)
+	//int value1 = 30;
+	//int value2 = 60;
+
+	//int * const ptr1 = &value1;
+
+	//printf("value1의 값 : %d\n", value1);
+
+	//*ptr1 = 99999;
+
+	//printf("value1의 값 : %d\n", value1);
+
+	//ptr1 = &value2;
+
+#pragma endregion
+
+#pragma region sizeof(자료형)
+
+	//float health = 66.5f;
+	//short* pointer;
+
+	//printf("char의 크기 : %d\n", sizeof(char));
+	//printf("short의 크기 : %d\n", sizeof(short));
+	//printf("int의 크기 : %d\n", sizeof(int));
+	//printf("long의 크기 : %d\n", sizeof(long));
+
+	//printf("float의 크기 : %d\n", sizeof(health));
+	//printf("double의 크기 : %d\n", sizeof(double));
+	//printf("long double의 크기 : %d\n", sizeof(long double));
+
+	//printf("Pointer의 크기 : %d\n", sizeof(pointer));
+
+#pragma endregion
+
+#pragma region 구구단
+
+	// 2 * 1 = 2
+	// ~
+	// 2 * 9 = 18
+
+	// 9 * 9 = 81
+
+	//for (int i = 2; i < 10; i++)
 	//{
-	//	if (i == 3)
+	//	for (int j = 1; j < 10; j++)
 	//	{
-	//		continue;
+	//		printf(" %d * %d = %d\n", i , j, i * j);
 	//	}
-
-	//	printf("%d ", i);
 	//}
 
 #pragma endregion
 
-#pragma region 형 변환
-	// 서로 다른 자료형을 가지고 있는 변수끼리
-	// 연산이 이루어질 때 기존에 지정했던 자료형을
-	// 다른 자료형으로 변환하는 과정입니다.
+#pragma region Scanf(입력 함수)
+	// 표준 입력 함수로, 여러 종류의 데이터를
+	// 다양한 서식에 맞추어 입력해주는 함수입니다.
 
-	// 암묵적 형 변환
-	// 서로 다른 자료형으로 연산이 이루어질 때 자료형의
-	// 크기가 큰 자료형으로 변환되는 과정입니다.
+	// scanf<- SDL 검사 해체를 안하고 사용하게 되면 에러 발생
 
-	//int integer = 10;
-	//float decimal = 2.5f;
+	// scanf_s("입력할 변수의 서식", &변수)
 
-	//// double > float > int > short > char
-	//// result(12.5f) <- 10(float 실수) + 2.5(float 실수)
-	//float result = integer + decimal; 
+	// int count = 0;
 
-	//printf("result 변수의 값 : %f\n", result);
+	// printf("count 변수의 값을 입력해주세요.");
+	// scanf_s("%d", &count);
 
-	// 명시적 형 변환
-	// 연산이 이루어지기 전에 사용자가 직접 자료형을
-	// 변환하는 과정입니다.
+	// 표준 입력 함수는 입력을 수행할 떄까지 다음
+	// 작업으로 넘어갈 수 없습니다.
+	// printf("count 변수의 값 : %d", count);
 
-	// float 메모리 [2.5] = 5/2
-	// 프로그래밍에서 정수와 정수끼리의 연산은
-	// 정수만 나오게 됩니다.
+	// 별찍기
+	// 문제) 내가 입력한 값에 따라 별이 찍히도록 구현해주세요.
+	//☆
 
-	//int a = 5;
-	//int b = 2;
+	int number = 0;
 
-	//float result1 = (float)a / b;
+	scanf_s("%d", &number);
 
-	//printf("result1의 값 : %f\n", result1);
-#pragma endregion
+	for(int i = 0; i < number; i++)
+	{	
+		for (int j = 0; j < i+1; j++)
+		{
+			printf("☆");
+		}
+		printf("\n");
+	}
 
-#pragma region 주소 연산자
-	// 변수의 주소 값을 변환하는 연산자입니다.
-
-	// int data = 333;
-
-	// %p : 데이터의 주소를 출력하는 서식 지정자입니다.
-	// x64 : 64 비트 (포인터 : 8 Byte)
-	// x86 : 32 비트 (포인터 : 4 Byte)
-
-	// 변수의 주소는 프로그램을 실행할 때마다 계속 바뀝니다.
-	// printf("data 변수의 주소 : %p\n", &data);
 
 #pragma endregion
-
-#pragma region 포인터
-	// 메모리의 주소 값을 저장할 수 있는 변수입니다.
-
-	//int box = 100;
-	//int box1 = 999;
-	//
-	//// ptr [box의 주소] <- box의 주소
-	//int * ptr = &box;
-
-	//// 포인터 변수도 자신의 메모리 공간을 가지고 있으며,
-	//// 포인터 변수에 변수의 주소를 저장하게 되면
-	//// 해당 변수의 시작 주소를 가리키게 됩니다.
-	//printf("ptr 변수의 값: %p\n", ptr);
-	//printf("ptr 변수의 주소값 : %p\n", &ptr);
-	//printf("box 변수의 주솟값 : %p\n", &box);
-
-	//printf("box 변수의 값 : &d\n", box);
-
-	//*ptr = 600;
-
-	//printf("box 변수의 값 : %d\n", box);
-
-	//// ptr [box1의 주소] <- box1의 주소
-	//ptr = &box1;
-
-	//*ptr = -999;
-
-	//printf("box 변수의 값 : %d\n", box);
-	//printf("box1 변수의 값 : %d\n", box1);
-
-	//double health = 10.5;
-
-	//// int ptr1 4 byte의 메모리 공간을 읽는다.
-	//int* ptr1 = &health;
-
-	//printf("ptr 변수의 값 : %p\n", ptr1);
-
-	//// 포인터 변수를 저장하기 위해 주소 값을 저장할
-	//// 변수의 자료형과 포인터 변수
-	//*ptr1 = 66.75;
-	//printf("ptr1 변수가 가리키는 값 : %f\n", *ptr1);
-
-#pragma endregion
-
-
 
 
 }
