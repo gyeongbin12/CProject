@@ -1,83 +1,85 @@
 #include <stdio.h> // 기본 입출력 헤더 파일
 
-void main()
+// enum 선언
+enum Color
 {
-#pragma region 포인터 배열
+	// 열거형은 초깃값을 설정할 수 있으며, 그 다음 상수값은
+	// 1씩 증가합니다.
+	BLACK,
+	RED = 13,
+	BLUE,
+};
 
-	//const char* string[3];
+enum State
+{
+	IDLE,
+	ATTACK,
+	DIE
+};
 
-	//// 8 byte  8 byte  8 byte
-	//
-	//// 0 번째 Index [First의 시작 주소]
-	//
-	//string[0] = "First";
-	//string[1] = "Second";
-	//string[2] = "Third";
+int main()
+{
+#pragma region (2)차원 배열
+	// 배열의 요소로 또 다른 배열을 가지는 배열입니다.
 
-	//for (int i = 0; i < 3; i++)
+	// 2차원 배열은 행과 열로 구분되며 앞에 있는
+	// 배열은 행을 의미하고, 뒤에 있는 배열은 열을 의미합니다.
+	//int array2D[4][3] =
 	//{
-	//	printf("string[%d]의 값 : %s\n", i, string[i]);
-	//}
+	//	{ 10, 20, 30},
+	//	{ 40, 50, 60},
+	//	{ 70, 80, 90},
+	//	{ 100, 110, 120},
+	//};
 
-	int a = 10;
-	int b = 20;
-	int c = 30;
+	//printf("array2D의 주소 : %p\n", array2D);
+	//printf("array2D[0][0]의 주소: %p\n", &array2D[0][0]);
 
-	int * ptr1 = &a;
-	int	* ptr2 = &b;
-	int	* ptr3 = &c;
+	//int * ptr = NULL;
 
-	// 포인터 배열 선언
-	int	* arrayPtr[] = {ptr1, ptr2, ptr3};
+	//// 배열 포인터
+	//// 특정 사이즈의 배열'만' 가리킬 수 있는 하나의 포인터입니다.
+	//int (* arrayPtr)[3];
 
-	// printf("arrayPtr[0]의 값 : %p\n", arrayPtr[0]);
-	// printf("arrayPtr[0]가 가리키는 값 : %d\n", *arrayPtr[0]);
+	//arrayPtr = array2D;
+	//arrayPtr = arrayPtr + 1;
+
+	//printf("arrayPtr이 가리키는 값 : %d", (*arrayPtr)[0]);
 #pragma endregion
 
-#pragma region unsigned(부호없는 자료형)
-	// 부호가 없는 자료형으로 부호 비트가 없고.
-	// 자료를 저장할 수 있는 데이터 영역이 2배로
-	// 늘어나는 자료형입니다.
+#pragma region 열거형(enum)
+	// 요소, 멤버라 불리는 명명된 값의 집합을
+	// 이루는 자료형입니다.
 
-	// char data = 128;
-	// unsigned char uData = 128;
+	//enum Color color;
 
-	// signed 자료형은 암묵적 형변환이 진행될 때
-	// 늘어나는 메모리 값은 1(부호 비트)로 채워집니다.
-	// printf("data의 값 : %d\n", data);
-	// printf("data의 값 : %u\n", data);
+	//color = BLACK;
+	//printf("color의 값 : %d\n", color);
 
+	//color = RED;
+	//printf("color의 값 : %d\n", color);
+	
+	enum State state; 
 
-	// %u : unsigned int 형 값을 표현하는 서식 지정자입니다.
+	int select = 0;
 
-	// 둘 다 부호가 없는 표현이므로 암묵적 형변환이 진행될 때
-	// 늘어나는 메모리 값은 0으로 채워집니다.
-	// printf("uData의 값 : %d\n", uData);
-	// printf("uData의 값 : %u\n", uData);
+	printf("플레이어의 상태를 설정해주세요. : ");
+	scanf_s("%d", &select);
 
+	state = select;
 
-#pragma endregion
-
-#pragma region 공약수
-	// 두 개의 정수형 변수 선언
-	// ex) int x, y;
-	// x와 y변수에 입력한 값을 저장하고
-	// x와 y의 공통된 약수를 구해주세요.
-
-	int x = 0;
-	int y = 0;
-
-	scanf_s("%d %d", &x, &y);
-
-	for(int i = 1; i <= x && i <= y; i++)
+	switch(state)
 	{
-		if (x % i == 0 && y % i == 0)
-		{
-			printf("공약수 : %d	", i);
-		}
+		case IDLE : printf("대기 상태");
+			break;
+		case ATTACK : printf("공격 상태");
+			break;
+		case DIE : printf("죽음 상태");
+			break;
 	}
 
 #pragma endregion
 
-	return;
+
+	return 0;
 }
