@@ -1,2 +1,9 @@
 ﻿  Source.c
+C:\Users\Administrator\Desktop\CProject\CProject\Source.c(59,10): warning C4473: 'scanf_s' : not enough arguments passed for format string
+C:\Users\Administrator\Desktop\CProject\CProject\Source.c(59,10): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+C:\Users\Administrator\Desktop\CProject\CProject\Source.c(59,10): message : the missing variadic argument 2 is required by format string '%[^\n]'
+C:\Users\Administrator\Desktop\CProject\CProject\Source.c(59,10): message : this argument is used as a buffer size
+C:\Users\Administrator\Desktop\CProject\CProject\Source.c(61,9): warning C4473: 'printf' : not enough arguments passed for format string
+C:\Users\Administrator\Desktop\CProject\CProject\Source.c(61,9): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+C:\Users\Administrator\Desktop\CProject\CProject\Source.c(61,9): message : the missing variadic argument 2 is required by format string '%s'
   CProject.vcxproj -> C:\Users\Administrator\Desktop\CProject\CProject\x64\Debug\CProject.exe
