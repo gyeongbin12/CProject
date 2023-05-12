@@ -1,89 +1,84 @@
-#define _CRT_SECURE_NO_WARNINGS
-
 #include <stdio.h> // 기본 입출력 헤더 파일
-#include <stdarg.h>
-
-void Array(int array[], int size)
-{
-	// call by reference
-	for (int i = 0; i < size; i++)
-	{
-		array[i] = 100 * i;
-
-		//
-		//
-	}
-}
-
-void ChangeString(char str[])
-{
-	for (int i = 0; str[i] != '\0'; i++)
-	{
-		printf("%c", str[i] - 32);
-	}
-}
-
-void Information(int size, ...)
-{
-	// va_list
-	// 각 가변 인자의 시작 주소를 가리키는 포인터입니다.
-	va_list argPtr;
-
-	// va_start
-	// va-list로 만들어진 포인터에게 가변인자 중 첫 번째
-	// 인자의 주소를 가르쳐주는 매크로입니다.
-	va_start(argPtr, size);
-
-	int result = 0;
-
-	for (int i = 0; i < size; i++)
-	{
-		// va_arg
-		// 특정 가변인자를 가리키고 있는 va_list의 포인터를
-		// 다음 가변인자로 이동시켜 주는 매크로입니다.
-		result += va_arg(argPtr, int);
-	}
-
-	printf("result 변수의 값 : %d\n", result);
-
-	// va_end
-	// 사용한 가변인자 변수를 끝낼 때 NULL로 돌려주는
-	// 매크로입니다.
-	va_end(argPtr);
-}
+#include <stdlib.h>
+#include <time.h>
 
 int main()
 {
-#pragma region 매개변수 배열
+#pragma region rand() 함수
+	// 0 ~ 32767 사이의 난수 값을 생성하는
+	// 함수입니다.
 
-	//int dataList[5] = { 1, 2, 3, 4, 5 };
+	// time : 1970년 1월 1일 0시 (UTC)부터 현재까지
+	// 흐른 시간을 반환합니다.
 
-	//Array(dataList, 5);
+	// 시간 단위 : (초)
+	//srand(time(NULL));
 
+	//// 5개 출력해주세요.
+
+	//int value = 0;
+
+	//// 랜덤한 값이 한 자릿수만 나올 수 있도록 만들어 주세요.
 	//for (int i = 0; i < 5; i++)
 	//{
-	//	printf("%d ", dataList[i]);
+	//	value = rand() % 10 + 1;
+	//	printf("value의 값 : %d\n", value);
 	//}
 
-	char ptr[10];
+#pragma endregion
 
-	scanf("%s", ptr);
+#pragma region UP-DOWN 게임
 
-	ChangeString(ptr);
+	//int life = 5;
+	//int value = 0;
+	//int input = 0;
+
+	//srand(time(NULL));
+	//value = rand() % 50+1;
+
+	//while (life) // <- 게임 업데이트
+	//{
+	//	printf("현재 목숨 : %d\n", life);
+	//	printf("컴퓨터가 가지고 있는 숫자 : ");
+	//	scanf_s("%d", &input);
+
+	//	if (input == value)
+	//	{
+	//		printf("게임에서 승리하였습니다.");
+	//		break;
+	//	}
+	//	else if (input < value)
+	//	{
+	//		printf("컴퓨터가 가지고 있는 값보다 작습니다.\n");
+	//		life--;
+	//	}
+	//	else if (input > value)
+	//	{
+	//		printf("컴퓨터가 가지고 있는 값보다 큽니다.\n");
+	//		life--;
+	//	}
+	//}
+
+	//if (life == 0)
+	//{
+	//	printf("\n게임에서 패배하였습니다.");
+	//}
 
 #pragma endregion
 
-#pragma region 가변인수
-	// 매개변수로 들어오는 값의 갯수와 상관없이
-	// 동적으로 인수를 받을 수 있는 인수입니다.
+#pragma region 정수의 승격
+	// char 자료형과 short 자료형이  연산이
+	// 이루어질 때 CPU가 처리하기에 가장 적합한
+	// 크기의 정수 자료형 int로 자동 형변환하는 과정입니다.
 
-	Information(2, 10, 20);
-	Information(5, 1, 2, 3, 4, 5);
+	char data1 = 5;
+	short data2 = 10;
 
-
+	printf("data과 data2를 연산한 크기 : %d", sizeof(data1 + data2));
 
 #pragma endregion
 
 
-	return 0;
+
+	return;
 }
