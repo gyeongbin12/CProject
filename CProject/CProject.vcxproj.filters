@@ -59,5 +59,8 @@
     <ClInclude Include="(2023.5.11) 가변 인수.h">
       <Filter>Header File</Filter>
     </ClInclude>
+    <ClInclude Include="(2023.5.12) 랜드함수.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

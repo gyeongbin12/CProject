@@ -1,84 +1,77 @@
-#include <stdio.h> // 기본 입출력 헤더 파일
-#include <stdlib.h>
-#include <time.h>
+#include <stdio.h> // 기본 입출력 헤더 파일	
+#include <conio.h>
+#include <Windows.h>
+
+#define UP 72
+#define LEFT 75
+#define RIGHT 77
+#define DOWN 80
 
 int main()
 {
-#pragma region rand() 함수
-	// 0 ~ 32767 사이의 난수 값을 생성하는
-	// 함수입니다.
+#pragma region _kbhit() 함수
 
-	// time : 1970년 1월 1일 0시 (UTC)부터 현재까지
-	// 흐른 시간을 반환합니다.
+	//char key = 0;
 
-	// 시간 단위 : (초)
-	//srand(time(NULL));
-
-	//// 5개 출력해주세요.
-
-	//int value = 0;
-
-	//// 랜덤한 값이 한 자릿수만 나올 수 있도록 만들어 주세요.
-	//for (int i = 0; i < 5; i++)
+	//while (1)
 	//{
-	//	value = rand() % 10 + 1;
-	//	printf("value의 값 : %d\n", value);
+	//	//if (_kbhit()) // 키보드 입력을 확인하는 함수
+	//	
+	//		key = _getch(); // 방향키 입력시 224 00이 들어오게 되므로 앞에 있는 값 224를 삭제합니다.
+
+	//		if (key == -32)
+	//		{
+	//			key = _getch();
+	//		}
+
+	//		switch (key)
+	//		{
+	//			case UP: printf("↑\n");
+	//				break;
+	//			case LEFT: printf("←\n");
+	//				break;
+	//			case RIGHT: printf("→\n");
+	//				break;
+	//			case DOWN: printf("↓\n");
+	//				break;
+	//			default: printf("다시 입력해주세요.\n");
+	//				break;
+	//		}
+
+	//		printf("다른 작업 중...\n");
 	//}
 
 #pragma endregion
 
-#pragma region UP-DOWN 게임
+#pragma region GetAsyncKeyState() 함수
 
-	//int life = 5;
-	//int value = 0;
-	//int input = 0;
-
-	//srand(time(NULL));
-	//value = rand() % 50+1;
-
-	//while (life) // <- 게임 업데이트
-	//{
-	//	printf("현재 목숨 : %d\n", life);
-	//	printf("컴퓨터가 가지고 있는 숫자 : ");
-	//	scanf_s("%d", &input);
-
-	//	if (input == value)
-	//	{
-	//		printf("게임에서 승리하였습니다.");
-	//		break;
-	//	}
-	//	else if (input < value)
-	//	{
-	//		printf("컴퓨터가 가지고 있는 값보다 작습니다.\n");
-	//		life--;
-	//	}
-	//	else if (input > value)
-	//	{
-	//		printf("컴퓨터가 가지고 있는 값보다 큽니다.\n");
-	//		life--;
-	//	}
-	//}
-
-	//if (life == 0)
-	//{
-	//	printf("\n게임에서 패배하였습니다.");
-	//}
-
-#pragma endregion
-
-#pragma region 정수의 승격
-	// char 자료형과 short 자료형이  연산이
-	// 이루어질 때 CPU가 처리하기에 가장 적합한
-	// 크기의 정수 자료형 int로 자동 형변환하는 과정입니다.
-
-	char data1 = 5;
-	short data2 = 10;
-
-	printf("data과 data2를 연산한 크기 : %d", sizeof(data1 + data2));
+	while (1)
+	{
+		if (GetAsyncKeyState(VK_UP))
+		{
+			// 1000 (1 초) 
+			Sleep(100);
+			printf("↑\n");
+		}
+		if (GetAsyncKeyState(VK_LEFT))
+		{
+			Sleep(100);
+			printf("←\n");
+		}
+		if (GetAsyncKeyState(VK_RIGHT))
+		{
+			Sleep(100);
+			printf("→\n");
+		}
+		if (GetAsyncKeyState(VK_DOWN))
+		{
+			Sleep(100);
+			printf("↓\n");
+		}
+	}
 
 #pragma endregion
 
 
-
-	return;
+	return 0;
 }

@@ -1,3 +1,2 @@
 ﻿  Source.c
-C:\Users\Administrator\Desktop\CProject\CProject\Source.c(36,12): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
   CProject.vcxproj -> C:\Users\Administrator\Desktop\CProject\CProject\x64\Debug\CProject.exe
