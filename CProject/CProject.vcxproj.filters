@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.c">
+    <ClCompile Include="Source.cpp">
       <Filter>Source File</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,6 +69,9 @@
       <Filter>Header File</Filter>
     </ClInclude>
     <ClInclude Include="(2023.5.17) 파일 입출력.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="(2023.5.18) 동적 배열.h">
       <Filter>Header File</Filter>
     </ClInclude>
   </ItemGroup>
