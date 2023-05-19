@@ -1,7 +1,7 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <stdio.h> // ±âº» ÀÔÃâ·Â Çì´õ ÆÄÀÏ	
+#include <stdio.h> // ê¸°ë³¸ ì…ì¶œë ¥ í—¤ë” íŒŒì¼	
 #include <conio.h>
 #include <Windows.h>
 
@@ -9,10 +9,10 @@
 
 int main()
 {
-#pragma region µ¿Àû ¹è¿­
-	// HEAPÀÌ¶ó´Â ¸Ş¸ğ¸® °ø°£À» ÀÌ¿ëÇÏ¿©
-	// ¹è¿­ÀÇ Å©±â¸¦ ÄÄÆÄÀÏ ´Ü°è°¡ ¾Æ´Ñ ½ÇÇà ½Ã°£¿¡
-	// °¡º¯ÀûÀ¸·Î ¹Ù²Ü ¼ö ÀÖ´Â ¹è¿­ÀÔ´Ï´Ù.
+#pragma region ë™ì  ë°°ì—´
+	// HEAPì´ë¼ëŠ” ë©”ëª¨ë¦¬ ê³µê°„ì„ ì´ìš©í•˜ì—¬
+	// ë°°ì—´ì˜ í¬ê¸°ë¥¼ ì»´íŒŒì¼ ë‹¨ê³„ê°€ ì•„ë‹Œ ì‹¤í–‰ ì‹œê°„ì—
+	// ê°€ë³€ì ìœ¼ë¡œ ë°”ê¿€ ìˆ˜ ìˆëŠ” ë°°ì—´ì…ë‹ˆë‹¤.
 
 	// int size = 10;
 	// 
@@ -27,14 +27,14 @@ int main()
 	// 
 	// for (int i = 0; i < size; i++)
 	// {
-	// 	printf("arrayPtr[%d]ÀÇ °ª : %d\n", i, arrayPtr[i]);
+	// 	printf("arrayPtr[%d]ì˜ ê°’ : %d\n", i, arrayPtr[i]);
 	// }
 	// 
 	// free(arrayPtr);
 
 #pragma endregion
 
-#pragma region  fflush() ÇÔ¼ö
+#pragma region  fflush() í•¨ìˆ˜
 
 	// char a, b, c;
 	// 
@@ -47,13 +47,18 @@ int main()
 	// scanf_s("%c", &c);
 	// fflush(stdin);
 	// 
-	// printf("a º¯¼öÀÇ °ª : %c\n", a);
-	// printf("b º¯¼öÀÇ °ª : %c\n", b);
-	// printf("c º¯¼öÀÇ °ª : %c\n", c);
+	// printf("a ë³€ìˆ˜ì˜ ê°’ : %c\n", a);
+	// printf("b ë³€ìˆ˜ì˜ ê°’ : %c\n", b);
+	// printf("c ë³€ìˆ˜ì˜ ê°’ : %c\n", c);
 #pragma endregion
 
+<<<<<<< HEAD:CProject/(2023.5.18) ë™ì  ë°°ì—´.h
 #pragma region ¹®ÀÚ¿­ µÚÁı±â
 
+=======
+#pragma region ë¬¸ìì—´ ë’¤ì§‘ê¸°
+	
+>>>>>>> 01aa999a10e277773b624ae3d976fa1f636f15ad:CProject/Source.c
 	char string[SIZE] = { 0, };
 
 	scanf_s("%s", string, SIZE);
@@ -63,11 +68,14 @@ int main()
 		printf("%c", string[i]);
 	}
 
+<<<<<<< HEAD:CProject/(2023.5.18) ë™ì  ë°°ì—´.h
 
 
 
 
 
+=======
+>>>>>>> 01aa999a10e277773b624ae3d976fa1f636f15ad:CProject/Source.c
 #pragma endregion
 
 
