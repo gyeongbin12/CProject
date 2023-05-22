@@ -1,8 +1,4 @@
 ﻿  Source.cpp
-C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(35,17): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(35,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(38,34): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(38,46): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(114,27): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(114,29): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(24,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(24,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
   CProject.vcxproj -> C:\Users\Administrator\Desktop\CProject\CProject\Debug\CProject.exe
