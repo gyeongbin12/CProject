@@ -3,20 +3,23 @@
 #include <stdio.h> // 기본 입출력 헤더 파일	
 #include <conio.h>
 #include <Windows.h>
+#include <time.h>
 
-#define UP 72
 #define LEFT 75
 #define RIGHT 77
-#define DOWN 80
 
-#define WIDTH 11
-#define HEIGHT 11
+typedef struct Enemy
+{
+	int x;
+	int y;
+	const char* shape;
+}Enemy;
 
 typedef struct Player
 {
 	int x;
 	int y;
-	const char* shape;
+	const char * shape;
 }Player;
 
 void GotoXY(int x, int y)
@@ -26,54 +29,7 @@ void GotoXY(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
 }
 
-// 미로 맵 데이터
-char maze[WIDTH][HEIGHT];
-
-// 미로 맵 생성
-void CreateMaze()
-{
-	// 0 : 빈 공간
-	// 1 : 벽
-	// 2 : 탈출구
-
-	strcpy(maze[0], "1111111111");
-	strcpy(maze[1], "1000110011");
-	strcpy(maze[2], "1110111001");
-	strcpy(maze[3], "1110001101");
-	strcpy(maze[4], "1111101101");
-	strcpy(maze[5], "1111101101");
-	strcpy(maze[6], "1100000001");
-	strcpy(maze[7], "1100111111");
-	strcpy(maze[8], "1101111111");
-	strcpy(maze[9], "1100000021");
-	strcpy(maze[10],"1111111111");
-}
-
-void Renderer()
-{
-	for (int i = 0; i < WIDTH; i++)
-	{
-		for (int j = 0; j < HEIGHT; j++)
-		{
-			if (maze[i][j] == '0')
-			{
-				printf("  ");
-			}
-			else if (maze[i][j] == '1')
-			{
-				printf("■");
-			}
-			else if (maze[i][j] == '2')
-			{
-				printf("◎");
-			}
-		}
-
-		printf("\n");
-	}
-}
-
-void Keyboard(char map[WIDTH][HEIGHT], Player * ptrPlayer)
+void Keyboard(Player* ptrPlayer)
 {
 	char key = 0;
 
@@ -88,48 +44,64 @@ void Keyboard(char map[WIDTH][HEIGHT], Player * ptrPlayer)
 
 		switch (key)
 		{
-			case UP:if (maze[ptrPlayer->y - 1][ptrPlayer->x / 2] != '1')
-			{
-			ptrPlayer->y--; 
-			}
-			break;
-			case LEFT: if (maze[ptrPlayer->y][ptrPlayer->x / 2 - 1] != '1')
-			{
+		case LEFT: if (ptrPlayer->x <= 0) return;
 			ptrPlayer->x -= 2;
-			}
 			break;
-			case RIGHT:if (maze[ptrPlayer->y][ptrPlayer->x / 2 + 1] != '1')
-			{
+		case RIGHT:if (ptrPlayer->x >= 28) return;
 			ptrPlayer->x += 2;
-			}
-			break;
-			case DOWN:if (maze[ptrPlayer->y+1][ptrPlayer->x / 2 ] != '1')
-			{
-			ptrPlayer->y++;
-			}
 			break;
 		}
 	}
 }
 
+int RandomX()
+{
+	srand(time(NULL));
+
+	int random = rand() % 31;
+
+	if (random % 2 == 1)
+	{
+		random += 1;
+	}
+
+	return random;
+}
+
 int main()
 {
-	Player player = { 2, 6, "★" };
+	system("mode con cols=30 lines=25");
 
-	CreateMaze();
+	Player player = { 16, 23, "★" };
+	Enemy enemy = { RandomX(), 0, "♨" };
 
-	while (1)
+	while(1)
 	{
-		Renderer();
+		Keyboard(&player);
 
-		Keyboard(maze, &player);
+		if (enemy.y >= 24)
+		{
+			enemy.y = 0;
+			enemy.x = RandomX();
+		}
+
+		if (player.x == enemy.x && player.y == enemy.y)
+		{
+			printf("패 배");
+			break;
+		}
+
+		GotoXY(enemy.x, enemy.y++);
+		printf("%s", enemy.shape);
 
 		GotoXY(player.x, player.y);
 		printf("%s", player.shape);
 
 		Sleep(100);
+
 		system("cls");
 	}
-	
+
+
 	return 0;
 }
