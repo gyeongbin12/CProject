@@ -1,35 +1,24 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <stdio.h> // 기본 입출력 헤더 파일	
-#include <conio.h>
-#include <Windows.h>
-#include <time.h>
+#include "../CProject/LoadManager.h"
 
-#define LEFT 75
-#define RIGHT 77
+#define UP 72
+#define DOWN 80
 
-typedef struct Enemy
-{
-	int x;
-	int y;
-	const char* shape;
-}Enemy;
-
-typedef struct Player
-{
-	int x;
-	int y;
-	const char * shape;
-}Player;
-
-void GotoXY(int x, int y)
+void GotoXY(int x, int y)		
 {
 	COORD position = { x, y };
 
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
 }
 
-void Keyboard(Player* ptrPlayer)
+typedef struct Select
+{
+	int x, y;
+	const char* shape;
+}Select;
+
+void Keyboard(Select * selectPtr)
 {
 	char key = 0;
 
@@ -41,67 +30,58 @@ void Keyboard(Player* ptrPlayer)
 		{
 			key = _getch();
 		}
-
-		switch (key)
-		{
-		case LEFT: if (ptrPlayer->x <= 0) return;
-			ptrPlayer->x -= 2;
-			break;
-		case RIGHT:if (ptrPlayer->x >= 28) return;
-			ptrPlayer->x += 2;
-			break;
-		}
 	}
+
+	switch (key)
+	{
+	case UP: selectPtr->y -= 5;
+		break;
+	case DOWN: selectPtr->y += 5;
+		break;
+	}
+
 }
 
-int RandomX()
+void Typing(unsigned int speed, const char * content)
 {
-	srand(time(NULL));
+	int i = 0;
 
-	int random = rand() % 31;
-
-	if (random % 2 == 1)
+	while (content[i] != '\0')
 	{
-		random += 1;
+		printf("%c", content[i++]);
+		fflush(stdout);
+		Sleep(speed);
 	}
-
-	return random;
 }
 
 int main()
-{
-	system("mode con cols=30 lines=25");
+{	
+	// ReadTextFile("Resources/DB.txt");
+	// Typing(100, "Hello~");
 
-	Player player = { 16, 23, "★" };
-	Enemy enemy = { RandomX(), 0, "♨" };
+	int stage = 0;
 
-	while(1)
+	Select select = { 15, 29, "☞" };
+
+	while (1)
 	{
-		Keyboard(&player);
 
-		if (enemy.y >= 24)
-		{
-			enemy.y = 0;
-			enemy.x = RandomX();
-		}
+		Keyboard(&select);
 
-		if (player.x == enemy.x && player.y == enemy.y)
+		switch (stage)
 		{
-			printf("패 배");
+		case 0: ReadTextFile("Resources/DB.txt");
+			break;
+		case 1: ReadTextFile("Monster");
 			break;
 		}
 
-		GotoXY(enemy.x, enemy.y++);
-		printf("%s", enemy.shape);
-
-		GotoXY(player.x, player.y);
-		printf("%s", player.shape);
-
-		Sleep(100);
+		GotoXY(select.x, select.y);
+		printf("%s", select.shape);
 
 		system("cls");
 	}
-
+	
 
 	return 0;
 }
