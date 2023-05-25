@@ -1,8 +1,2 @@
 ﻿  Source.cpp
-C:\Users\Administrator\Desktop\CProject\CProject\LoadManager.h(9,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\CProject\CProject\LoadManager.h(9,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(10,6): error C2084: function 'void GotoXY(int,int)' already has a body
-C:\Users\Administrator\Desktop\CProject\CProject\LoadManager.h(7): message : see previous definition of 'GotoXY'
-C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(12,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(12,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\CProject\CProject\Source.cpp(72,3): error C2065: 'GotoXY': undeclared identifier
+  CProject.vcxproj -> C:\Users\Administrator\Desktop\CProject\CProject\Debug\CProject.exe

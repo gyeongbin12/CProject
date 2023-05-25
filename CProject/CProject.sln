@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CProject", "CProject.vcxproj", "{A9745F85-DD31-4A80-8D65-059A4C390C6F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MapEditor.c", "..\MapEditor.c\MapEditor.c.vcxproj", "{6CCC1952-A206-41D6-9019-43AD42FD787E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{A9745F85-DD31-4A80-8D65-059A4C390C6F}.Release|x64.Build.0 = Release|x64
 		{A9745F85-DD31-4A80-8D65-059A4C390C6F}.Release|x86.ActiveCfg = Release|Win32
 		{A9745F85-DD31-4A80-8D65-059A4C390C6F}.Release|x86.Build.0 = Release|Win32
+		{6CCC1952-A206-41D6-9019-43AD42FD787E}.Debug|x64.ActiveCfg = Debug|x64
+		{6CCC1952-A206-41D6-9019-43AD42FD787E}.Debug|x64.Build.0 = Debug|x64
+		{6CCC1952-A206-41D6-9019-43AD42FD787E}.Debug|x86.ActiveCfg = Debug|Win32
+		{6CCC1952-A206-41D6-9019-43AD42FD787E}.Debug|x86.Build.0 = Debug|Win32
+		{6CCC1952-A206-41D6-9019-43AD42FD787E}.Release|x64.ActiveCfg = Release|x64
+		{6CCC1952-A206-41D6-9019-43AD42FD787E}.Release|x64.Build.0 = Release|x64
+		{6CCC1952-A206-41D6-9019-43AD42FD787E}.Release|x86.ActiveCfg = Release|Win32
+		{6CCC1952-A206-41D6-9019-43AD42FD787E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
