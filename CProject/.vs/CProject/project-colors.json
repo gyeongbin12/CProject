@@ -15,7 +15,12 @@
       "ProjectGuid": "6ccc1952-a206-41d6-9019-43ad42fd787e",
       "DisplayName": "MapEditor.c",
       "ColorIndex": 1
+    },
+    "9e067114-c74e-4e35-9574-ce579ceebeec": {
+      "ProjectGuid": "9e067114-c74e-4e35-9574-ce579ceebeec",
+      "DisplayName": "RainGame.c",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
