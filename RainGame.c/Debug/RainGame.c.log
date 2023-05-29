@@ -1,2 +1,6 @@
 ﻿  Source.cpp
-  RainGame.c.vcxproj -> C:\Users\Administrator\Desktop\CProject\CProject\Debug\RainGame.exe
+C:\Users\Administrator\Desktop\CProject\RainGame.c\Source.cpp(8,2): warning C4091: 'typedef ': ignored on left of 'Object' when no variable is declared
+C:\Users\Administrator\Desktop\CProject\RainGame.c\Source.cpp(12,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\CProject\RainGame.c\Source.cpp(12,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\CProject\RainGame.c\Source.cpp(33,17): error C2660: 'GotoXY': function does not take 1 arguments
+C:\Users\Administrator\Desktop\CProject\RainGame.c\Source.cpp(10,6): message : see declaration of 'GotoXY'
