@@ -26,9 +26,36 @@ void GotoXY(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
 }
 
+void Keyboard(Player* ptrPlayer)
+{
+	char key = 0;
+
+	if (_kbhit())
+	{
+		key = _getch();
+
+		if (key == -32)
+		{
+			key = _getch();
+		}
+
+		switch (key)
+		{
+		case LEFT: if (ptrPlayer->x <= 0) return;
+			ptrPlayer->x -= 2;
+			break;
+		case RIGHT:if (ptrPlayer->x >= 20) return;
+			ptrPlayer->x += 2;
+			break;
+		}
+	}
+}
+
 int main()
 {
-	Object object = (0, );
+	Object object = {0,'A'};
+	Player player = { 10, 15, "★" };
+	
 	// char a[10] = { "ABCD" };
 	// char b[10] = { "ABCD" };
 	// 두 개의 문자열이 서로 같으면 0을 반환합니다.
@@ -39,12 +66,15 @@ int main()
 	
 	while (1)
 	{
+		Keyboard(&player);
+
+		GotoXY(object.y, object.word);
+
+		GotoXY(player.x, player.y);
+		printf("%s", player.shape);
 
 
-		GotoXY();
 	}
-
-
 
 	return 0;
 }
