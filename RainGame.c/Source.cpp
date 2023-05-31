@@ -8,6 +8,9 @@
 #define RIGHT 77
 #define DOWN 80
 
+#define WIDTH 20
+#define HEIGHT 10
+
 typedef struct Player {
 	int x;
 	int y;
@@ -15,6 +18,7 @@ typedef struct Player {
 }Player;
 
 typedef struct Object{
+	int x;
 	int y;
 	char word; 
 }Object;
@@ -53,8 +57,8 @@ void Keyboard(Player* ptrPlayer)
 
 int main()
 {
-	Object object = {0,'A'};
-	Player player = { 10, 15, "¡Ú" };
+	Object object = {0,1,'A'};
+	Player player = { 10, 30, "¡Ú" };
 	
 	// char a[10] = { "ABCD" };
 	// char b[10] = { "ABCD" };
@@ -68,12 +72,14 @@ int main()
 	{
 		Keyboard(&player);
 
-		GotoXY(object.y, object.word);
-
 		GotoXY(player.x, player.y);
 		printf("%s", player.shape);
 
+		GotoXY(object.x, object.y++);
+		printf("%c", object.word);
 
+		Sleep(1000);
+		system("cls");
 	}
 
 	return 0;
